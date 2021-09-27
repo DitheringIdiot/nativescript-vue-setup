@@ -4,21 +4,30 @@
       <img
         src="~/assets/logo.png"
         alt="logo"
-        height="20%"
-        width="20%"
       >
       <HelloWorld :msg="msg" />
     </div>
   </div>
 </template>
-
+<!-- -->
 <template native>
   <Page>
-    <StackLayout backgroundColor="#000">
-      <TextView text="Multi\nLine\nText" />
-    </StackLayout>
+    <ActionBar :title="navbarTitle" />
+    <GridLayout rows="auto, auto">
+      <!-- copy-webpack-plugin copies asset from src/assets to project output/build directory /assets -->
+      <Image
+        src="~/assets/logo.png"
+        row="0"
+        class="m-20"
+      />
+      <HelloWorld
+        :msg="msg"
+        row="1"
+      />
+    </GridLayout>
   </Page>
 </template>
+
 
 <script lang="ts">
   import Vue from 'vue'
